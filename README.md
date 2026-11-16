@@ -156,6 +156,7 @@ cd design-system/app           && npm install && npm run storybook   # 앱용   
 | [docs/hands-on-guide.md](docs/hands-on-guide.md) | **직접 따라 해 보기** — one-tool + Storybook으로 업무 플로우 체험 (약 30분) |
 | [design-system/app/design-system-app.md](design-system/app/design-system-app.md) | 앱 샘플 Storybook 안내 (카탈로그 `COMPONENT-CATALOG.md`, 아이콘 `ICON-MARKUP.md` 포함) |
 | [design-system/admin-partner/design-system-admin-partner.md](design-system/admin-partner/design-system-admin-partner.md) | 샘플 Storybook의 컴포넌트·story id 목록 |
+| [docs/roles.md](docs/roles.md) | 역할 정리 (기획자·디자이너·프론트엔드·백엔드) |
 | [docs/one-canvas-process.md](docs/one-canvas-process.md) | 업무 프로세스 도식 (Mermaid) |
 | [one-canvas/one-canvas-rule.md](one-canvas/one-canvas-rule.md) | 통합캔버스 작성 규칙 |
 | [agile-issue/agile-issue-rule.md](agile-issue/agile-issue-rule.md) | 애자일 이슈 작성 규칙 |
