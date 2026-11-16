@@ -24,3 +24,7 @@
 - `design-system` — UI 문서화 툴(Storybook)
 - `agile-issue` — 애자일 이슈 관리
 - `ss-tool` — 업무툴
+
+### 소개 문서
+
+one-canvas와 one-tool을 처음 보는 사람을 위한 상세 안내(화면 캡처 포함): [docs/one-canvas-and-one-tool.md](docs/one-canvas-and-one-tool.md)
