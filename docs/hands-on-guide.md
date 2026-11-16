@@ -10,7 +10,7 @@ flowchart LR
     S0["0. 실행 준비"] --> S1["1. 캔버스 읽기"] --> S2["2. 코멘트 남기기"]
     S2 --> S3["3. 이슈 확인"] --> S4["4. 구현 착수 절차"]
     S4 --> S5["5. Storybook에서 컴포넌트 확인"]
-    S5 --> S6["6. 변경 전파 체험"] --> S7["7. 미보유 컴포넌트 만나기"]
+    S5 --> S6["6. 변경 전파 체험"] --> S7["7. 미보유 컴포넌트 만나기"] --> S8["8. 앱 화면으로 반복"]
 ```
 
 ## 0. 실행 준비
@@ -46,7 +46,8 @@ npm run storybook
 | 주소 | 무엇 |
 |---|---|
 | http://localhost:8090 | one-tool (회원가입 후 로그인) |
-| http://localhost:6008 | Storybook |
+| http://localhost:6008 | Storybook (어드민·파트너용, 1~7단계) |
+| http://localhost:6007 | Storybook (앱용, 8단계에서 사용 — `cd design-system/app && npm install && npm run storybook`) |
 
 > **왜 `/tmp/demo`로 복사하나요?** one-tool은 `sample/` 폴더를 목록에서 제외합니다. 샘플을 한 단계 위로 복사한 사본을 읽게 하는 것이고, 6단계에서는 이 사본을 수정합니다. 원본 `sample/`은 바뀌지 않습니다.
 
@@ -155,6 +156,43 @@ one-tool에서 **캔버스 모드 → `partner-settlement` → `canvas-partner-s
 
 "없는 것을 있는 것처럼 태깅하지 않고, 있는 것을 새로 만들지 않는다"가 캔버스와 디자인 시스템 사이의 약속입니다.
 
+## 8. 앱 화면으로 반복하기 (`design-system/app`)
+
+같은 흐름을 **앱(사용자 대상) 캔버스**로 한 번 더 해 봅니다. 앱 쪽은 디자인 시스템이 다르고(포트 **6007**), 캔버스에 태깅하는 이름의 목록이 자동 생성 문서로 따로 있습니다.
+
+```bash
+cd design-system/app
+npm install
+npm run storybook      # http://localhost:6007
+```
+
+1. one-tool에서 `cart-price-change-alert/canvas-app-cart-price-change-alert.html`(장바구니 가격 변동 알림)을 엽니다. 화면이 여러 개이고, 체크박스·수량·바텀시트·토글이 실제로 동작하는 목업입니다.
+2. **[`design-system/app/COMPONENT-CATALOG.md`](../design-system/app/COMPONENT-CATALOG.md)** 를 엽니다. 앱 캔버스는 이 문서의 **`story id` 열**이 단일 출처입니다(어드민·파트너처럼 `*.stories.tsx`의 title을 grep하지 않습니다).
+3. 캔버스의 디스크립션에서 컴포넌트를 찾아 story id를 카탈로그와 대조하고, `http://localhost:6007/?path=/story/<story id>` 로 엽니다.
+
+| 캔버스의 컴포넌트 | story id | 확인 포인트 |
+|---|---|---|
+| `Header` | `components-header--back-and-title` | 뒤로가기 아이콘 + 제목 |
+| `NoticeBox(variant=GROUP_DELIVERY)` | `components-noticebox--group-delivery` | 파랑 계열 안내 |
+| `NoticeBox(variant=UNAVAILABLE_ADDRESS)` | `components-noticebox--unavailable-address` | 빨강 계열 안내 |
+| `Toast` | `components-toast--default` | 하단 토스트 |
+| `BackSVG` 등 아이콘 | `icons-each--back-svg` | 아이콘은 `Icons/Each` 한 곳에 모여 있음 |
+
+![앱 Storybook — InfoConfirmSheet](images/22-storybook-app.png)
+
+> 모든 스토리는 폭 375px 휴대폰 프레임 안에 그려집니다. 화면 하단에 붙는 `Bottom`, `BottomMenu`, `InfoConfirmSheet`가 실제 앱과 같은 위치에 보입니다.
+
+**미보유 항목 4분류 체험.** 장바구니 캔버스의 「디자인 시스템 미보유」 줄을 읽고, 각 항목이 어느 분류인지 맞춰 보세요.
+
+| 분류 | 예 | 구현 시 행동 |
+|---|---|---|
+| `신규 필요` | `PriceChangeAmount` (담은 가격 → 현재가 비교 표기) | **그 화면 영역만 보류**하고 질문. Storybook에서 검색해도 없습니다 |
+| `variant 값 추가 필요` | `NoticeBox`의 `CART_PRICE_CHANGED` | 컴포넌트는 있으므로 정상 구현하되, variant 값 추가가 선행됨. `NoticeBox` 스토리에는 세 variant(`CTA`, `UNAVAILABLE_ADDRESS`, `GROUP_DELIVERY`)뿐입니다 |
+| `참조 전용(page-local)` | 특정 페이지 안에서만 쓰는 컴포넌트 | 새로 만들지 말고 참조만 |
+| `공용화 필요` | `AgreementToggle` | 공용으로 승격하는 작업이 선행돼야 재사용 가능 |
+
+화면 영역까지 보류하는 것은 `신규 필요` 한 가지뿐입니다(규칙: [`agile-issue-rule.md`](../agile-issue/agile-issue-rule.md)). 이 샘플 Storybook에는 위 미보유 항목들이 **일부러 들어 있지 않습니다**([목록](../design-system/app/design-system-app.md)).
+
 ## 정리
 
 ```bash
@@ -167,5 +205,4 @@ rm -rf /tmp/demo
 ## 다음 단계
 
 - 샘플을 참고해 **내 기획 건의 캔버스**를 `one-canvas/<기획-건>/canvas-*.html`로 만들어 보세요. 규칙은 [`one-canvas-rule.md`](../one-canvas/one-canvas-rule.md)입니다.
-- 이 레포의 `design-system/admin-partner`는 샘플용 최소 구성입니다. 실제로 쓸 때는 팀의 컴포넌트로 교체하고, 캔버스의 태깅이 그 컴포넌트의 실제 경로·story를 가리키게 유지하세요.
-- 앱(사용자 대상) 화면용 `design-system/app`(포트 6007)은 이 샘플 레포에 포함하지 않았습니다. 장바구니·재입고 알림 샘플 캔버스는 해당 디자인 시스템을 참조하므로 Storybook으로는 따라 해 볼 수 없습니다.
+- 이 레포의 `design-system/admin-partner`와 `design-system/app`은 샘플용 최소 구성입니다. 실제로 쓸 때는 팀의 컴포넌트로 교체하고, 캔버스의 태깅이 그 컴포넌트의 실제 경로·story를 가리키게 유지하세요.

@@ -1,0 +1,42 @@
+{
+  "BackSVG": [
+    "0 0 24 24",
+    "M15 5l-7 7 7 7"
+  ],
+  "RedLineInfoIconSVG": [
+    "0 0 24 24",
+    "M12 8v5M12 16.5v.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+  ],
+  "BlueLineInfoIconSVG": [
+    "0 0 24 24",
+    "M12 11v6M12 7.5v.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+  ],
+  "DropdownArrowSVG": [
+    "0 0 24 24",
+    "M6 9l6 6 6-6"
+  ],
+  "BellIconSVG": [
+    "0 0 24 24",
+    "M6 17V11a6 6 0 1112 0v6l2 2H4l2-2zM10 21h4"
+  ],
+  "SmallChevronRightSVG": [
+    "0 0 24 24",
+    "M9 6l6 6-6 6"
+  ],
+  "ShoppingCartIconSVG": [
+    "0 0 24 24",
+    "M3 4h2l2.4 11h10l2-8H6M9 20h.01M17 20h.01"
+  ],
+  "SettingIconSVG": [
+    "0 0 24 24",
+    "M4 7h10M18 7h2M4 17h2M10 17h10M16 5v4M8 15v4"
+  ],
+  "NoDataSVG": [
+    "0 0 48 48",
+    "M8 14h32v24H8zM8 14l6-8h20l6 8M18 26h12"
+  ],
+  "GreyCloseIconSVG": [
+    "0 0 24 24",
+    "M6 6l12 12M18 6L6 18"
+  ]
+}

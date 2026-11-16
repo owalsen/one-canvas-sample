@@ -100,7 +100,8 @@ agile-issue: 캔버스를 근거로 에픽·스토리(수락 기준·태스크·
 │   ├── one-canvas-rule.md      통합캔버스 작성 규칙
 │   └── sample/                 샘플 캔버스 (정산, 장바구니 가격 변동 알림, 재입고 알림, one-tool 이슈 보기)
 ├── design-system/  UI 문서화 툴(Storybook)
-│   └── admin-partner/          정산 샘플 캔버스용 최소 Storybook (포트 6008). 앱용 design-system/app은 미포함
+│   ├── admin-partner/          정산 샘플 캔버스용 최소 Storybook (포트 6008)
+│   └── app/                    앱 샘플 캔버스용 최소 Storybook (포트 6007)
 ├── agile-issue/    애자일 이슈 관리
 │   ├── agile-issue-rule.md     이슈 작성 규칙
 │   └── sample/                 샘플 이슈 (settlement)
@@ -141,7 +142,8 @@ java -jar build/libs/one-tool-0.0.1-SNAPSHOT.jar \
 디자인 시스템(Storybook)까지 함께 띄워 업무 플로우를 따라 해 보려면 [실습 가이드](docs/hands-on-guide.md)로 가세요.
 
 ```bash
-cd design-system/admin-partner && npm install && npm run storybook   # http://localhost:6008
+cd design-system/admin-partner && npm install && npm run storybook   # 어드민·파트너용 http://localhost:6008
+cd design-system/app           && npm install && npm run storybook   # 앱용            http://localhost:6007
 ```
 
 ---
@@ -152,6 +154,7 @@ cd design-system/admin-partner && npm install && npm run storybook   # http://lo
 |---|---|
 | [docs/one-canvas-and-one-tool.md](docs/one-canvas-and-one-tool.md) | 처음 보는 사람을 위한 상세 소개 (스크린샷 포함) |
 | [docs/hands-on-guide.md](docs/hands-on-guide.md) | **직접 따라 해 보기** — one-tool + Storybook으로 업무 플로우 체험 (약 30분) |
+| [design-system/app/design-system-app.md](design-system/app/design-system-app.md) | 앱 샘플 Storybook 안내 (카탈로그 `COMPONENT-CATALOG.md`, 아이콘 `ICON-MARKUP.md` 포함) |
 | [design-system/admin-partner/design-system-admin-partner.md](design-system/admin-partner/design-system-admin-partner.md) | 샘플 Storybook의 컴포넌트·story id 목록 |
 | [docs/one-canvas-process.md](docs/one-canvas-process.md) | 업무 프로세스 도식 (Mermaid) |
 | [one-canvas/one-canvas-rule.md](one-canvas/one-canvas-rule.md) | 통합캔버스 작성 규칙 |

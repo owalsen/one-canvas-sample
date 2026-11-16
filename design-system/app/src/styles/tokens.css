@@ -1,0 +1,14 @@
+:root {
+  --ap-font: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  --ap-black: #111111;
+  --ap-text: #222222;
+  --ap-sub: #767676;
+  --ap-line: #e5e5e5;
+  --ap-bg: #f5f5f5;
+  --ap-red: #e5322d;
+  --ap-red-soft: #fdecec;
+  --ap-blue: #2563eb;
+  --ap-blue-soft: #eaf1ff;
+  --ap-green: #16a34a;
+}
+body { font-family: var(--ap-font); color: var(--ap-text); }

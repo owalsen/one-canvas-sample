@@ -11,7 +11,7 @@ npm install
 npm run storybook      # http://localhost:6008
 ```
 
-정적 빌드는 `npm run build-storybook`, 타입 검사는 `npm run typecheck`입니다. 포트 6008은 어드민·파트너 디자인 시스템의 규칙 포트입니다(앱은 6007).
+정적 빌드는 `npm run build-storybook`, 타입 검사는 `npm run typecheck`입니다. 포트 6008은 어드민·파트너 디자인 시스템의 규칙 포트입니다(앱은 6007 — [`design-system/app`](../app/design-system-app.md)).
 
 ## 컴포넌트와 story id
 
