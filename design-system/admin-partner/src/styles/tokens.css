@@ -1,0 +1,16 @@
+:root {
+  --ds-font: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  --ds-text: #111827;
+  --ds-text-sub: #6b7280;
+  --ds-line: #e5e7eb;
+  --ds-bg-soft: #f3f4f6;
+  --ds-primary: #111827;
+  --ds-accent: #2563eb;
+  --ds-accent-soft: #eff6ff;
+  --ds-success: #16a34a;
+  --ds-success-soft: #ecfdf3;
+  --ds-warn: #d97706;
+  --ds-warn-soft: #fffbeb;
+  --ds-radius: 8px;
+}
+body { font-family: var(--ds-font); color: var(--ds-text); }

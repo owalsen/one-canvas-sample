@@ -1,0 +1,25 @@
+{
+  "name": "design-system-admin-partner-sample",
+  "version": "0.0.0",
+  "private": true,
+  "description": "one-canvas 샘플용 최소 디자인 시스템(Storybook). 정산 샘플 캔버스가 태깅한 컴포넌트만 담았다.",
+  "scripts": {
+    "storybook": "storybook dev -p 6008",
+    "build-storybook": "storybook build",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "8.4.7",
+    "@storybook/react": "8.4.7",
+    "@storybook/react-vite": "8.4.7",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "storybook": "8.4.7",
+    "typescript": "5.6.3",
+    "vite": "5.4.11"
+  }
+}
