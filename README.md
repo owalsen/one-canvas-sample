@@ -85,6 +85,7 @@ agile-issue: 캔버스를 근거로 에픽·스토리(수락 기준·태스크·
 ```
 
 수정이 발생하면 **영향 범위 파악 → 디자인 시스템 반영 → 이슈 수정 → 개발 수정** 순으로 전파됩니다.
+도식으로 보려면 [업무 프로세스 문서](docs/one-canvas-process.md)를 참고하세요.
 기획 배경은 기획 문서(`에이전틱 개발 업무 단축을 위한 기획-디자인시스템 통합 계획.md`)를 참고하세요.
 
 ---
@@ -143,6 +144,7 @@ java -jar build/libs/one-tool-0.0.1-SNAPSHOT.jar \
 | 문서 | 내용 |
 |---|---|
 | [docs/one-canvas-and-one-tool.md](docs/one-canvas-and-one-tool.md) | 처음 보는 사람을 위한 상세 소개 (스크린샷 포함) |
+| [docs/one-canvas-process.md](docs/one-canvas-process.md) | 업무 프로세스 도식 (Mermaid) |
 | [one-canvas/one-canvas-rule.md](one-canvas/one-canvas-rule.md) | 통합캔버스 작성 규칙 |
 | [agile-issue/agile-issue-rule.md](agile-issue/agile-issue-rule.md) | 애자일 이슈 작성 규칙 |
 | [one-tool/ss-tool-rule.md](one-tool/ss-tool-rule.md) | 업무툴 규칙 문서 |
